@@ -1,4 +1,4 @@
-nodebb-theme-cerulean
+nodebb-theme-univunix
 =====================
 
-The default NodeBB theme based on the vanilla theme
+The UnivUnix NodeBB theme based on the vanilla theme

@@ -1,7 +1,7 @@
 {
-    "id": "nodebb-theme-cerulean",
-    "name": "NodeBB Cerulean",
-    "description": "Cerulean Theme for NodeBB",
+    "id": "nodebb-theme-univunix",
+    "name": "NodeBB UnivUnix",
+    "description": "UnivUnix Theme for NodeBB",
     "url": "https://github.com/designcreateplay/nodebb-theme-cerulean",
     "screenshot": "screenshot.png"
 }
