@@ -41,10 +41,31 @@
 	<div id="alert_window"></div>
 
 
-	<footer id="footer" class="container footer hide">
-		{footerHTML}
-		<div class="copyright">
-			Copyright &copy; 2014 <a target="_blank" href="https://www.nodebb.com">NodeBB Forums</a> | <a target="_blank" href="//github.com/designcreateplay/NodeBB/graphs/contributors">Contributors</a>
+	<footer class="navbar navbar-inverse navbar-fixed-bottom">
+		<div class="container navbar-center">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#validation">
+					<span class="sr-only">
+						Toggle navigation
+					</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div id="validation" class="collapse navbar-collapse navbar-ex1-collapse navbar-responsive-collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a class="sprite sprite-html5" target="_blank" href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.univunix.com%2F"></a>
+					</li>
+					<li>
+						<a class="sprite sprite-css3" target="_blank" href="http://jigsaw.w3.org/css-validator/validator?uri=www.univunix.com"></a>
+					</li>
+					<li>
+						<a class="sprite sprite-cc" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_ES"></a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</footer>
 
