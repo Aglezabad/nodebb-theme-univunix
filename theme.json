@@ -3,5 +3,6 @@
     "name": "NodeBB UnivUnix",
     "description": "UnivUnix Theme for NodeBB",
     "url": "https://github.com/designcreateplay/nodebb-theme-cerulean",
-    "screenshot": "screenshot.png"
+    "screenshot": "screenshot.png",
+    "templates": "templates"
 }
