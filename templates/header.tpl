@@ -48,7 +48,7 @@
 	<header class="navbar navbar-inverse navbar-fixed-top header" role="navigation" id="header-menu">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
 					<span class="sr-only">
 						Toggle navigation
 					</span>
@@ -63,7 +63,7 @@
 				</div>
 			</div>
 
-			<div class="navbar-collapse collapse navbar-ex1-collapse">
+			<div id="navigation" class="navbar-collapse collapse navbar-ex1-collapse">
 				<ul id="main-nav" class="nav navbar-nav pull-left">
 					<li>
 						<a href="{relative_path}/"><i class="fa fa-fw fa-home" title="{title}"></i><span class="visible-xs-inline">{title}</span></a>

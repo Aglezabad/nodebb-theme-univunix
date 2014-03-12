@@ -42,7 +42,7 @@
 
 
 	<footer class="navbar navbar-inverse navbar-fixed-bottom">
-		<div class="container navbar-center">
+		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#validation">
 					<span class="sr-only">
@@ -54,7 +54,7 @@
 				</button>
 			</div>
 			<div id="validation" class="collapse navbar-collapse navbar-ex1-collapse navbar-responsive-collapse">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav navbar-center">
 					<li>
 						<a class="sprite sprite-html5" target="_blank" href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.univunix.com%2F"></a>
 					</li>
