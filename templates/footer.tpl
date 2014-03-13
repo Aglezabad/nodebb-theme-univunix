@@ -64,6 +64,9 @@
 					<li>
 						<a class="sprite sprite-cc" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_ES"></a>
 					</li>
+					<li>
+						<a class="sprite sprite-nodebb" target="_blank" href="http://nodebb.org"></a>
+					</li>
 				</ul>
 			</div>
 		</div>
