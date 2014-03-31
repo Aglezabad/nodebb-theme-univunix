@@ -86,11 +86,9 @@
 					</li>
 					<!-- ENDIF isAdmin -->
 
-					<!-- IF searchEnabled -->
 					<li class="visible-xs">
-						<a id="mobile-search-button" href="{relative_path}/search"><i class="fa fa-search fa-fw" title="[[global:header.search]]"></i> [[global:header.search]]</a>
+						<a id="mobile-search-button" href="{relative_path}/search"><i class="fa fa-search" title="[[global:header.search]]"></i> [[global:header.search]]</a>
 					</li>
-					<!-- ENDIF searchEnabled -->
 
 					<!-- BEGIN navigation -->
 					<li class="{navigation.class}">
@@ -107,7 +105,7 @@
 					<!-- END navigation -->
 				</ul>
 
-				<ul id="logged-in-menu" class="nav navbar-nav navbar-right hide pull-right">
+				<ul id="logged-in-menu" class="nav navbar-nav navbar-right hide">
 					<li>
 						<a href="#" id="reconnect" class="hide" title="Connection to {title} has been lost, attempting to reconnect..."><i class="fa fa-check"></i></a>
 					</li>
@@ -121,11 +119,11 @@
 						</ul>
 					</li>
 					<li class="visible-xs">
-						<a href="{relative_path}/notifications"><i class="fa fa-exclamation-triangle fa-fw" title="[[notifications:title]]"></i> [[notifications:title]]</a>
+						<a href="{relative_path}/notifications"><i class="fa fa-exclamation-triangle" title="[[notifications:title]]"></i> [[notifications:title]]</a>
 					</li>
 
-					<li class="chats dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="chat_dropdown"><i class="fa fa-comment-o fa-fw" title="[[global:header.chats]]"></i> <span class="visible-xs-inline">[[global:header.chats]]</span></a>
+					<li class="chats dropdown text-center hidden-xs">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="chat_dropdown"><i class="fa fa-comment-o" title="[[global:header.chats]]"></i></a>
 						<ul id="chat-list" class="dropdown-menu" aria-labelledby="chat_dropdown">
 							<li>
 								<a href="#"><i class="fa fa-refresh fa-spin"></i> [[global:chats.loading]]</a>
@@ -159,9 +157,10 @@
 							</li>
 						</ul>
 					</li>
+
 				</ul>
 
-				<ul id="logged-out-menu" class="nav navbar-nav navbar-right pull-right">
+				<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
 					<!-- IF allowRegistration -->
 					<li>
 						<a href="{relative_path}/register">
@@ -178,23 +177,24 @@
 					</li>
 				</ul>
 
-				<!-- IF searchEnabled -->
 				<ul id="logged-conditional-menu" class="nav navbar-nav navbar-right">
-					<li>
-						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
+					<li class="hidden-xs">
+						<form id="search-form" class="navbar-form navbar-right" role="search" method="GET" action="">
 							<div class="hide" id="search-fields">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
 								</div>
 								<button type="submit" class="btn btn-default hide">[[global:search]]</button>
 							</div>
-							<button id="search-button" type="button" class="btn btn-link hide"><i class="fa fa-search fa-fw" title="[[global:header.search]]"></i></button>
 						</form>
 					</li>
-				</ul>
-				<!-- ENDIF searchEnabled -->
 
-				<ul class="nav navbar-nav navbar-right pagination-block hidden visible-lg visible-md">
+					<li class="hidden-xs">
+						<a href="#" id="search-button" class="hide"><i class="fa fa-search" title="[[global:header.search]]"></i></a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block hide">
 					<li class="active">
 						<a href="#">
 							<i class="fa fa-chevron-up pointer"></i>
@@ -207,12 +207,12 @@
 					</li>
 				</ul>
 
-				<div class="header-topic-title pull-right hidden-xs">
-					<span></span>
+				<div class="header-topic-title pull-right hidden-md-inline">
+					<h4 id="header-topic-title"></h4>
 				</div>
 			</div>
 		</div>
-	</header>
+	</div>
 
 	<input id="csrf_token" type="hidden" template-variable="csrf" value="{csrf}" />
 
