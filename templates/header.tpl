@@ -6,7 +6,7 @@
 	<meta<!-- IF metaTags.name --> name="{metaTags.name}"<!-- ENDIF metaTags.name --><!-- IF metaTags.property --> property="{metaTags.property}"<!-- ENDIF metaTags.property --><!-- IF metaTags.content --> content="{metaTags.content}"<!-- ENDIF metaTags.content --> />
 	<!-- END metaTags -->
 	<link rel="stylesheet" href="{relative_path}/vendor/fontawesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="{relative_path}/css/theme.css?{cache-buster}" />
+	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{cache-buster}" />
 	<!-- IF bootswatchCSS --><link href="{bootswatchCSS}" rel="stylesheet" media="screen"><!-- ENDIF bootswatchCSS -->
 	<!-- BEGIN linkTags -->
 	<link<!-- IF linkTags.link --> link="{linkTags.link}"<!-- ENDIF linkTags.link --><!-- IF linkTags.rel --> rel="{linkTags.rel}"<!-- ENDIF linkTags.rel --><!-- IF linkTags.type --> type="{linkTags.type}"<!-- ENDIF linkTags.type --><!-- IF linkTags.href --> href="{linkTags.href}"<!-- ENDIF linkTags.href --> />
@@ -14,6 +14,17 @@
 	<!-- BEGIN pluginCSS -->
 	<link rel="stylesheet" href="{pluginCSS.path}?{cache-buster}">
 	<!-- END pluginCSS -->
+	<!-- IF useCustomCSS -->
+	<style type="text/css">{customCSS}</style>
+	<!-- ENDIF useCustomCSS -->
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
 	<script>
 		var RELATIVE_PATH = "{relative_path}";
 	</script>
@@ -31,35 +42,32 @@
 			}
 		});
 	</script>
-
-	<!-- TODO : this has to be refactored, maybe configured from ACP? -baris -->
-	<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-	<!-- IF useCustomCSS -->
-	<style type="text/css">{customCSS}</style>
-	<!-- ENDIF useCustomCSS -->
 </head>
 
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top header" role="navigation" id="header-menu">
+	<header class="navbar navbar-inverse navbar-fixed-top header" role="navigation" id="header-menu">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+					<span class="sr-only">
+						Toggle navigation
+					</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<div>
-					<a href="{relative_path}/">
-						<img class="{brand:logo:display} forum-logo" src="{brand:logo}" />
-					</a>
-					<a href="{relative_path}/">
-						<h1 class="navbar-brand forum-title">{title}</h1>
-					</a>
+				<a id="brand" class="sprite sprite-brand navbar-brand" href="http://www.univunix.com/">
+				</a>
+				<div class="header-topic-title visible-xs">
+					<span></span>
 				</div>
 			</div>
 
-			<div class="navbar-collapse collapse navbar-ex1-collapse">
-				<ul id="main-nav" class="nav navbar-nav">
+			<div id="navigation" class="navbar-collapse collapse navbar-ex1-collapse">
+				<ul id="main-nav" class="nav navbar-nav pull-left">
+					<li>
+						<a href="{relative_path}/"><i class="fa fa-fw fa-home" title="{title}"></i><span class="visible-xs-inline">{title}</span></a>
+					</li>
 					<li class="nodebb-loggedin">
 						<a href="{relative_path}/unread"><i id="unread-count" class="fa fa-fw fa-inbox" data-content="0" title="[[global:header.unread]]"></i><span class="visible-xs-inline"> [[global:header.unread]]</span></a>
 					</li>
@@ -78,9 +86,11 @@
 					</li>
 					<!-- ENDIF isAdmin -->
 
+					<!-- IF searchEnabled -->
 					<li class="visible-xs">
-						<a id="mobile-search-button" href="{relative_path}/search"><i class="fa fa-search" title="[[global:header.search]]"></i> [[global:header.search]]</a>
+						<a id="mobile-search-button" href="{relative_path}/search"><i class="fa fa-search fa-fw" title="[[global:header.search]]"></i> [[global:header.search]]</a>
 					</li>
+					<!-- ENDIF searchEnabled -->
 
 					<!-- BEGIN navigation -->
 					<li class="{navigation.class}">
@@ -97,7 +107,7 @@
 					<!-- END navigation -->
 				</ul>
 
-				<ul id="logged-in-menu" class="nav navbar-nav navbar-right hide">
+				<ul id="logged-in-menu" class="nav navbar-nav navbar-right hide pull-right">
 					<li>
 						<a href="#" id="reconnect" class="hide" title="Connection to {title} has been lost, attempting to reconnect..."><i class="fa fa-check"></i></a>
 					</li>
@@ -111,11 +121,11 @@
 						</ul>
 					</li>
 					<li class="visible-xs">
-						<a href="{relative_path}/notifications"><i class="fa fa-exclamation-triangle" title="[[notifications:title]]"></i> [[notifications:title]]</a>
+						<a href="{relative_path}/notifications"><i class="fa fa-exclamation-triangle fa-fw" title="[[notifications:title]]"></i> [[notifications:title]]</a>
 					</li>
 
-					<li class="chats dropdown text-center hidden-xs">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="chat_dropdown"><i class="fa fa-comment-o" title="[[global:header.chats]]"></i></a>
+					<li class="chats dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="chat_dropdown"><i class="fa fa-comment-o fa-fw" title="[[global:header.chats]]"></i> <span class="visible-xs-inline">[[global:header.chats]]</span></a>
 						<ul id="chat-list" class="dropdown-menu" aria-labelledby="chat_dropdown">
 							<li>
 								<a href="#"><i class="fa fa-refresh fa-spin"></i> [[global:chats.loading]]</a>
@@ -149,10 +159,9 @@
 							</li>
 						</ul>
 					</li>
-
 				</ul>
 
-				<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+				<ul id="logged-out-menu" class="nav navbar-nav navbar-right pull-right">
 					<!-- IF allowRegistration -->
 					<li>
 						<a href="{relative_path}/register">
@@ -169,24 +178,23 @@
 					</li>
 				</ul>
 
+				<!-- IF searchEnabled -->
 				<ul id="logged-conditional-menu" class="nav navbar-nav navbar-right">
-					<li class="hidden-xs">
-						<form id="search-form" class="navbar-form navbar-right" role="search" method="GET" action="">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
 							<div class="hide" id="search-fields">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
 								</div>
 								<button type="submit" class="btn btn-default hide">[[global:search]]</button>
 							</div>
+							<button id="search-button" type="button" class="btn btn-link hide"><i class="fa fa-search fa-fw" title="[[global:header.search]]"></i></button>
 						</form>
 					</li>
-
-					<li class="hidden-xs">
-						<a href="#" id="search-button" class="hide"><i class="fa fa-search" title="[[global:header.search]]"></i></a>
-					</li>
 				</ul>
+				<!-- ENDIF searchEnabled -->
 
-				<ul class="nav navbar-nav navbar-right pagination-block hide">
+				<ul class="nav navbar-nav navbar-right pagination-block hidden visible-lg visible-md">
 					<li class="active">
 						<a href="#">
 							<i class="fa fa-chevron-up pointer"></i>
@@ -199,12 +207,12 @@
 					</li>
 				</ul>
 
-				<div class="header-topic-title pull-right hidden-md-inline">
-					<h4 id="header-topic-title"></h4>
+				<div class="header-topic-title pull-right hidden-xs">
+					<span></span>
 				</div>
 			</div>
 		</div>
-	</div>
+	</header>
 
 	<input id="csrf_token" type="hidden" template-variable="csrf" value="{csrf}" />
 
