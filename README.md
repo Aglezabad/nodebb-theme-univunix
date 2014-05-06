@@ -1,4 +1,4 @@
 nodebb-theme-univunix
 =====================
 
-The UnivUnix NodeBB theme based on the vanilla theme
+Based on NodeBB cerulean theme.
