@@ -215,7 +215,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</header>
 
 	<input id="csrf_token" type="hidden" template-variable="csrf" value="{csrf}" />
 
