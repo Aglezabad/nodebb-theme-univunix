@@ -52,7 +52,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a id="brand" class="sprite sprite-brand navbar-brand" href="http://www.univunix.com/">
+				<a id="brand" class="sprite sprite-brand navbar-brand" href="https://www.univunix.com/">
 				</a>
 				<div class="header-topic-title visible-xs">
 					<span></span>
